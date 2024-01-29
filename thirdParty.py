@@ -223,7 +223,7 @@ cosine_similarities = cosine_similarity(tfidf_matrix, tfidf_matrix)
 # Visualization
 sns.heatmap(cosine_similarities, annot=True, xticklabels=all_policies.keys(), yticklabels=all_policies.keys(), cmap="YlGnBu")
 plt.title('Cosine Similarity Between Candidates')
-plt.show()
+#plt.show()
 
 # Sentiment Analysis with Subjectivity
 sentiments = {candidate: TextBlob(' '.join(policy.values())).sentiment for candidate, policy in all_policies.items()}
@@ -248,7 +248,7 @@ sns.barplot(x=list(subjectivities.keys()), y=list(subjectivities.values()), ax=a
 ax2.set_title('Subjectivity Analysis of Candidates')
 ax2.set_ylabel('Subjectivity')
 
-plt.show()
+#plt.show()
 
 #Generating WordCloud Comparisons
 #clean text
@@ -325,10 +325,10 @@ for i, candidate in enumerate(candidates):
     img = plt.imread(f"{candidate}_wordcloud.png")
     
     axs[i].imshow(img)
-    axs[i].set_title(candidate)
+    axs[i].set_title(candidate,fontsize = 16)
 
 plt.tight_layout()
-#plt.show()
+plt.show()
 plt.savefig(f"candidate_wordcloud.png")
 
 
