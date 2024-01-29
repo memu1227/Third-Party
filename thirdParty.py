@@ -56,7 +56,7 @@ for policy, url in kennedy.items():
 
 # Print Kennedy's policies
 #for policy, text in kennedy_policies.items():
-#    print(f"Policy: {policy}\n{text}\n{'='*50}\n")
+#   print(f"Policy: {policy}\n{text}\n{'='*50}\n")
         
 
 #Cornel West
@@ -235,13 +235,16 @@ subjectivities = {candidate: sentiment.subjectivity for candidate, sentiment in 
 # Visualization
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
 
-# Bar plot for polarity
-sns.barplot(x=list(polarities.keys()), y=list(polarities.values()), ax=ax1)
+# Custom colors for bars
+bar_colors = ['skyblue', 'pink', 'lightgreen','yellow']
+
+# Bar plot for polarity with custom colors
+sns.barplot(x=list(polarities.keys()), y=list(polarities.values()), ax=ax1, palette=bar_colors)
 ax1.set_title('Polarity Analysis of Candidates')
 ax1.set_ylabel('Polarity')
 
-# Bar plot for subjectivity
-sns.barplot(x=list(subjectivities.keys()), y=list(subjectivities.values()), ax=ax2)
+# Bar plot for subjectivity with custom colors
+sns.barplot(x=list(subjectivities.keys()), y=list(subjectivities.values()), ax=ax2, palette=bar_colors)
 ax2.set_title('Subjectivity Analysis of Candidates')
 ax2.set_ylabel('Subjectivity')
 
@@ -306,7 +309,7 @@ def generate_wordcloud(policy_text, save_path):
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
     plt.savefig(save_path)
-    plt.show()
+    #plt.show()
 
 for candidate in candidates:
 
@@ -325,9 +328,8 @@ for i, candidate in enumerate(candidates):
     axs[i].set_title(candidate)
 
 plt.tight_layout()
-plt.show()
+#plt.show()
 plt.savefig(f"candidate_wordcloud.png")
-
 
 
 
