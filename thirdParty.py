@@ -325,7 +325,7 @@ for i, candidate in enumerate(candidates):
     img = plt.imread(f"{candidate}_wordcloud.png")
     
     axs[i].imshow(img)
-    axs[i].set_title(candidate,fontsize = 16)
+    axs[i].set_title(candidate,fontsize = 12)
 
 plt.tight_layout()
 plt.show()
